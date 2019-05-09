@@ -170,5 +170,14 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  var options = {
+    onKeyPress: function (phone, e, field, options) {
+        var masks = ['(00) 0000-00000', '(00) 00000-0000'];
+        var mask = (phone.length > 14) ? masks[1] : masks[0];
+        $('#contact-phone').mask(mask, options);
+    }
+  };  
+  $('#contact-phone').mask('(00) 0000-00000', options);
+
 
 });
